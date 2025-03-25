@@ -20,4 +20,4 @@ Clone this repo: git clone https://github.com/vaishnavi7997/CodeAlpha--Calculato
 2)Open any .js file and run it in the browser console or Node.js.
 
 ## Demo  
-🔗 Live Demo: https://jocular-kitten-d2bc1d.netlify.app/
+🔗 Live Demo: (https://javascript-project-calculator.netlify.app/)
