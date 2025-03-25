@@ -16,7 +16,7 @@ This is a simple calculator built with HTML, CSS, and JavaScript.
 
   📌 How to Use?
 
-Clone this repo: git clone https://github.com/vaishnavi7997/CodeAlpha-Calculator-Project.git 
+Clone this repo: git clone https://github.com/vaishnavi7997/CodeAlpha--Calculator-Project.git 
 2)Open any .js file and run it in the browser console or Node.js.
 
 ## Demo  
