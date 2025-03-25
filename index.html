@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    </style>
+</head>
+<body>
+    <div class="phone">
+        <div class="screen" id="display"></div>
+        <div class="buttons">
+            <button class="clear" onclick="clearDisplay()">C</button>
+            <button class="operator" onclick="appendValue('/')">/</button>
+            <button class="operator" onclick="appendValue('*')">*</button>
+            <button class="operator" onclick="appendValue('-')">-</button>
+            <button class="number" onclick="appendValue('7')">7</button>
+            <button class="number" onclick="appendValue('8')">8</button>
+            <button class="number" onclick="appendValue('9')">9</button>
+            <button class="operator" onclick="appendValue('+')">+</button>
+            <button class="number" onclick="appendValue('4')">4</button>
+            <button class="number" onclick="appendValue('5')">5</button>
+            <button class="number" onclick="appendValue('6')">6</button>
+            <button class="equals" onclick="calculateResult()">=</button>
+            <button class="number" onclick="appendValue('1')">1</button>
+            <button class="number" onclick="appendValue('2')">2</button>
+            <button class="number" onclick="appendValue('3')">3</button>
+            <button class="number" onclick="appendValue('0')">0</button>
+            <button class="number" onclick="appendValue('.')">.</button>
+            <button class="clear" onclick="backspace()">⌫</button>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('keydown', function(event) {
+            const key = event.key;
+            if (!isNaN(key) || "+-*/.=".includes(key)) {
+                appendValue(key);
+            } else if (key === 'Enter') {
+                calculateResult();
+            } else if (key === 'Backspace') {
+                backspace();
+            } else if (key === 'Escape') {
+                clearDisplay();
+            }
+        });
+        
+        function appendValue(value) {
+            navigator.vibrate(50);
+            document.getElementById('display').textContent += value;
+        }
+        function clearDisplay() {
+            navigator.vibrate(50);
+            document.getElementById('display').textContent = '';
+        }
+        function backspace() {
+            navigator.vibrate(50);
+            let display = document.getElementById('display');
+            display.textContent = display.textContent.slice(0, -1);
+        }
+        function calculateResult() {
+            navigator.vibrate(50);
+            try {
+                let expression = document.getElementById('display').textContent;
+                let result = eval(expression);
+                document.getElementById('display').textContent = result;
+            } catch {
+                document.getElementById('display').textContent = 'Error';
+            }
+        }
+    </script>
+</body>
+</html>
